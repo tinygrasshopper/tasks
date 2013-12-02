@@ -21,7 +21,7 @@ class TasksControllerTest < ActionController::TestCase
       post :create, task: { completed_at: @task.completed_at, description: @task.description, due_date: @task.due_date, title: @task.title }
     end
 
-    assert_redirected_to task_path(assigns(:task))
+    assert_redirected_to tasks_path
   end
 
   test "should show task" do
@@ -36,7 +36,7 @@ class TasksControllerTest < ActionController::TestCase
 
   test "should update task" do
     patch :update, id: @task, task: { completed_at: @task.completed_at, description: @task.description, due_date: @task.due_date, title: @task.title }
-    assert_redirected_to task_path(assigns(:task))
+    assert_redirected_to tasks_path
   end
 
   test "should destroy task" do
