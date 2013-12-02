@@ -1,34 +1,19 @@
-<h1>Listing tasks</h1>
-
-<p id="notice"><%= notice %></p>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Due date</th>
-      <th>Completed at</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div data-role="header">
+  <h1>Listing tasks</h1>
+</div>
+<div data-role="content">
+  <p id="notice"><%= notice %></p>
+  <ul data-role="listview" data-split-theme="d" data-split-icon="gear" data-inset="true">
     <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.title %></td>
-        <td><%= task.description %></td>
-        <td><%= task.due_date %></td>
-        <td><%= task.completed_at %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li>
+       
+         <%= link_to task.title, task%>
+
+         <%= link_to 'Edit', edit_task_path(task)%>
+      </li>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Task', new_task_path %>
+  </ul>
+</div>
+<div data-role="footer">
+  <%= link_to 'New Task', new_task_path %>
+</div>

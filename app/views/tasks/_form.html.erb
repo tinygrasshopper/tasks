@@ -1,3 +1,4 @@
+<div>
 <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
@@ -11,19 +12,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" data-role="fieldcontain">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
+  <div class="field" data-role="fieldcontain">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
-  <div class="field">
+  <div class="field" data-role="fieldcontain">
     <%= f.label :due_date %><br>
     <%= f.datetime_select :due_date %>
   </div>
-  <div class="field">
+  <div class="field" data-role="fieldcontain">
     <%= f.label :completed_at %><br>
     <%= f.datetime_select :completed_at %>
   </div>
@@ -31,3 +32,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>

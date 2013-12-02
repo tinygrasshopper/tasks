@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div data-role="header">
+  <a data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+  <h1><%= @task.title %></h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @task.title %>
-</p>
+<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Description:</strong>
@@ -19,6 +19,11 @@
   <strong>Completed at:</strong>
   <%= @task.completed_at %>
 </p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<fieldset class="ui-grid-a">
+  <div class="ui-block-a">
+   <%= link_to 'Back', tasks_path , {"data-role"=> "button","data-icon" => "new", "data-theme" => "c"} %>
+  </div>
+ <div class="ui-block-b"> 
+    <%= link_to 'Edit', edit_task_path(@task), {"data-role"=> "button","data-icon" => "new", "data-theme" => "d"} %>
+ </div>
+</fieldset>
